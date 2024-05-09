@@ -17,10 +17,10 @@
                     <div class="col-md-6 d-flex justify-content-start flex-fill">
                         <div class="card-body">
                             <p class="card-title">
-                                <label>🍕 Pizza: <strong> Super Pizza 239 </strong></label>
-                                <label>🍕 Size: <strong> Medium </strong></label>
-                                <label>🍕 Quantitiy: <strong> 7 </strong></label>
-                                <label>🍕 Total: 65 x 7 = <strong> 455 </strong></label>
+                                <label>🍕 Pizza: <strong> {%= order.pizzaId.name %} </strong></label>
+                                <label>🍕 Size: <strong> {%= order.size %} </strong></label>
+                                <label>🍕 Quantitiy: <strong> {%= order.quantity %} </strong></label>
+                                <label>🍕 Total: {%= order.price %} x {%= order.quantity %} = <strong> {%= order.totalPrice %} </strong></label>
                             </p>
                         </div>
                     </div>
