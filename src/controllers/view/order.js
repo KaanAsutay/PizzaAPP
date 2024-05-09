@@ -39,6 +39,7 @@ module.exports = {
         // Add '?' parameters to url if there is not:
         if (!req.originalUrl.includes('?')) req.originalUrl += '?'
 
+        // console.log(data)
         res.render('orderList', {
             details: await res.getModelListDetails(Order, filter),
             orders: data,
@@ -51,7 +52,9 @@ module.exports = {
         if (req.method == 'POST') {
 
             // Add userId from session:
-            //! req.body.userId = req.session.user.id
+            req.body.userId = req.session.user.id
+            // Add pizzaId from req.query:
+            req.body.pizzaId = req.query.pizza
 
             // Calculatings:
             req.body.quantity = req.body?.quantity || 1 // default: 1
@@ -125,10 +128,11 @@ module.exports = {
 
         } else {
 
+            console.log(await Order.findOne({ _id: req.params.id }))
             res.render('orderForm', {
                 order: await Order.findOne({ _id: req.params.id }),
                 pizzas: await Pizza.find(),
-                //! pizzaSizes,
+                pizzaSizes,
             })
         }
 
