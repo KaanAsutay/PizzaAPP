@@ -92,15 +92,19 @@
            
         </div>
         <!-- Pagination -->
+        {% if (details.pages) { %}
         <nav class="p-3 text-center" aria-label="Pagination">
             <a class="btn btn-primary" href="/pizzas?&page=1">&laquo;</a>
-            <a class="btn btn-primary me-2" href="/pizzas?&page=false">&larr;</a> <a class="btn btn-primary"
-                href="/pizzas?&page=1">1</a> <a class="btn btn-secondary" href="/pizzas?&page=2">2</a> <a
-                class="btn btn-secondary" href="/pizzas?&page=3">3</a> <a class="btn btn-secondary"
-                href="/pizzas?&page=4">4</a> <a class="btn btn-secondary" href="/pizzas?&page=5">5</a> <a
-                class="btn btn-primary ms-2" href="/pizzas?&page=2">&rarr;</a>
+            <a class="btn btn-primary me-2" href="/pizzas?&page=false">&larr;</a> 
+            <a class="btn btn-primary" href="/pizzas?&page=1">1</a> 
+            <a class="btn btn-secondary" href="/pizzas?&page=2">2</a> 
+            <a class="btn btn-secondary" href="/pizzas?&page=3">3</a> 
+            <a class="btn btn-secondary" href="/pizzas?&page=4">4</a> 
+            <a class="btn btn-secondary" href="/pizzas?&page=5">5</a> 
+            <a class="btn btn-primary ms-2" href="/pizzas?&page=2">&rarr;</a>
             <a class="btn btn-primary" href="/pizzas?&page=5">&raquo;</a>
         </nav>
+        {% } %}
         <!-- totalRecords -->
         <p class="text-center">
             <span class="p-2 bg-dark text-white">Total {%= details.totalRecords %} Records</span>
