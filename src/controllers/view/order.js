@@ -15,7 +15,7 @@
 const Pizza = require('../../models/pizza')
 const Order = require('../../models/order')
 
-//! const pizzaSizes = ['Small', 'Medium', 'Large', 'XLarge']
+const pizzaSizes = ['Small', 'Medium', 'Large', 'XLarge']
 
 module.exports = {
 
@@ -76,7 +76,7 @@ module.exports = {
                 order: null,
                 pizzas: null,
                 pizza: await Pizza.findOne({ _id: req.query.pizza }),
-                //! pizzaSizes,
+                pizzaSizes,
             })
         }
     },
