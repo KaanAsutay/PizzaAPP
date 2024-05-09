@@ -94,10 +94,11 @@
         <!-- Pagination -->
         {% if (details.pages) { %}
         <nav class="p-3 text-center" aria-label="Pagination">
-            <a class="btn btn-primary" href="{%= pageUrl %}&page=1">&laquo;</a>
             {% if (details.pages.previous) { %}
+            <a class="btn btn-primary" href="{%= pageUrl %}&page=1">&laquo;</a>
             <a class="btn btn-primary me-2" href="{%= pageUrl %}&page={%= details.pages.previous %}">&larr;</a> 
             {% } else { %}
+            <span class="btn btn-light disabled me-2">&laquo;</span>
             <span class="btn btn-light disabled me-2">&larr;</span> 
             {% } %}
 
