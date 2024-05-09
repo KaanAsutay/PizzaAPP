@@ -74,9 +74,9 @@
                             <h4 class="card-title">{%= pizza.name %}</h4>
                             <div class="card-text">
                                 <ul>
-                                    <li>Cheese</li>
-                                    <li>Pepperoni</li>
-                                    <li>Pineapple</li>
+                                    {% for (let topping of pizza.toppings) { %}
+                                    <li>{%= topping.name %}</li>
+                                    {% } %}
                                 </ul>
                                 <strong> {%= pizza.price %} $</strong>
                             </div>
