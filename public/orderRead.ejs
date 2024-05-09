@@ -15,29 +15,27 @@
                     {% } %}
                 <!-- admin-area-end -->
                 <div class="card-body">
-                    <h5 class="card-title">Super Pizza 239</h5>
+                    <h5 class="card-title">{%= order.pizzaId.name %}</h5>
                     <ul class="card-text">
                         <li>
                             Toppings:
                             <ul>
-                                <li>Cheese</li>
-                                <li>Pepperoni</li>
-                                <li>Pineapple</li>
-                                <li>Olive</li>
-                                <li>Sousage</li>
+                                {% for (let topping of order.pizzaId.toppings) { %}
+                                <li>{%= topping.name %}</li>
+                                {% } %}
                             </ul>
                         </li>
                         <li>
-                            Size: <strong> Medium</strong>
+                            Size: <strong> {%= order.size %}</strong>
                         </li>
                         <li>
-                            Quantitiy: <strong> 7</strong>
+                            Quantitiy: <strong> {%= order.quantity %}</strong>
                         </li>
                         <li>
-                            Price: <strong> 65</strong>
+                            Price: <strong> {%= order.price %}</strong>
                         </li>
                         <li>
-                            Total: <strong> 455</strong>
+                            Total: <strong> {%= order.totalPrice %}</strong>
                         </li>
                     </ul>
                 </div>
