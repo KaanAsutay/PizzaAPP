@@ -106,9 +106,13 @@
             <a class="btn btn-{%= pageNo == details.pages.current ? 'primary' : 'secondary' %}" href="{%= pageUrl %}&page={%= pageNo %}">{%= pageNo %}</a>           
             {% } %}
 
-            <a class="btn btn-primary ms-2" href="{%= pageUrl %}&page=2">&rarr;</a>
-
-            <a class="btn btn-primary" href="{%= pageUrl %}&page={%= details.pages.total %}">&raquo;</a>
+            {% if (details.pages.next) { %}
+            <a class="btn btn-primary me-2" href="{%= pageUrl %}&page={%= details.pages.next %}">&laquo;</a>
+            <a class="btn btn-primary" href="{%= pageUrl %}&page={%= details.pages.total %}">&larr;</a> 
+            {% } else { %}
+            <span class="btn btn-light disabled me-2">&rarr;</span>
+            <span class="btn btn-light disabled me-2">&raquo;</span> 
+            {% } %}
         </nav>
         {% } %}
         <!-- totalRecords -->
