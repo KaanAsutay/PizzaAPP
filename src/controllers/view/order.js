@@ -22,7 +22,7 @@ module.exports = {
     list: async (req, res) => {
 
         // only self-records:
-        //! const filter = req.session?.user && !req.session?.user.isAdmin ? { userId: req.session.user.id } : {}
+        const filter = req.session?.user && !req.session.user?.isAdmin ? { userId: req.session.user.id } : {}
 
         // const data = await res.getModelList(Order, {}, ['userId', 'pizzaId'])
         const data = await res.getModelList(Order, filter, [
