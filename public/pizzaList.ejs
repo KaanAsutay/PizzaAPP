@@ -103,7 +103,7 @@
             {% } %}
 
             {% for (let pageNo = 1; pageNo <= details.pages.total; pageNo++) { %}
-            <a class="btn btn-primary" href="{%= pageUrl %}&page={%= pageNo %}">{%= pageNo %}</a>           
+            <a class="btn btn-{%= pageNo == details.pages.current ? 'primary' : 'secondary' %}" href="{%= pageUrl %}&page={%= pageNo %}">{%= pageNo %}</a>           
             {% } %}
 
             <a class="btn btn-primary ms-2" href="{%= pageUrl %}&page=2">&rarr;</a>
