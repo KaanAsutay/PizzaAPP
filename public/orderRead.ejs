@@ -8,10 +8,12 @@
                 <img src="{%= order.pizzaId.image %}" class="card-img-top" style="width:400px; height:300px;">
                 {% } %} 
                     <!-- admin-area-start -->
-                <div class="col-md-3 d-flex align-items-center rounded p-2">
-                    <a href="/orders/654d58ee9acdcd3619b6c8db/update"> <button
-                            class="btn btn-sm btn-warning me-1">Update</button></a>
-                </div> <!-- admin-area-end -->
+                    {% if (user) { %}
+                    <div class="col-md-3 d-flex align-items-center rounded p-2">
+                        <a href="/orders/{%= order.id %}/update"><button class="btn btn-sm btn-warning me-1">Update</button></a>
+                    </div>
+                    {% } %}
+                <!-- admin-area-end -->
                 <div class="card-body">
                     <h5 class="card-title">Super Pizza 239</h5>
                     <ul class="card-text">
