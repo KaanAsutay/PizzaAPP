@@ -94,15 +94,22 @@
         <!-- Pagination -->
         {% if (details.pages) { %}
         <nav class="p-3 text-center" aria-label="Pagination">
-            <a class="btn btn-primary" href="/pizzas?&page=1">&laquo;</a>
-            <a class="btn btn-primary me-2" href="/pizzas?&page=false">&larr;</a> 
-            <a class="btn btn-primary" href="/pizzas?&page=1">1</a> 
-            <a class="btn btn-secondary" href="/pizzas?&page=2">2</a> 
-            <a class="btn btn-secondary" href="/pizzas?&page=3">3</a> 
-            <a class="btn btn-secondary" href="/pizzas?&page=4">4</a> 
-            <a class="btn btn-secondary" href="/pizzas?&page=5">5</a> 
-            <a class="btn btn-primary ms-2" href="/pizzas?&page=2">&rarr;</a>
-            <a class="btn btn-primary" href="/pizzas?&page=5">&raquo;</a>
+            <a class="btn btn-primary" href="{%= pageUrl %}&page=1">&laquo;</a>
+            {% if (details.pages.previous) { %}
+            <a class="btn btn-primary me-2" href="{%= pageUrl %}&page={%= details.pages.previous %}">&larr;</a> 
+            {% } else { %}
+            <span class="btn btn-light disabled me-2">&larr;</span> 
+            {% } %}
+
+            <a class="btn btn-primary" href="{%= pageUrl %}&page=1">1</a> 
+            <a class="btn btn-secondary" href="{%= pageUrl %}&page=2">2</a> 
+            <a class="btn btn-secondary" href="{%= pageUrl %}&page=3">3</a> 
+            <a class="btn btn-secondary" href="{%= pageUrl %}&page=4">4</a> 
+            <a class="btn btn-secondary" href="{%= pageUrl %}&page=5">5</a> 
+
+            <a class="btn btn-primary ms-2" href="{%= pageUrl %}&page=2">&rarr;</a>
+
+            <a class="btn btn-primary" href="{%= pageUrl %}&page={%= details.pages.total %}">&raquo;</a>
         </nav>
         {% } %}
         <!-- totalRecords -->
