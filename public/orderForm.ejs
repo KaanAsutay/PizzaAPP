@@ -64,10 +64,9 @@
                                     <td>Size</td>
                                     <td>
                                         <select name="size" class="form-select">
-                                            <option value="Small">Small</option>
-                                            <option value="Medium" selected>Medium</option>
-                                            <option value="Large">Large</option>
-                                            <option value="XLarge">XLarge</option>
+                                            {% for (let pizzaSize of pizzaSizes) { %}
+                                            <option value="{%= pizzaSize %}" {%= (pizzaSize == order?.size ? 'selected' : '') %}>{%= pizzaSize %}</option>
+                                            {% } %}
                                         </select>
                                     </td>
                                 </tr>
