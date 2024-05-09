@@ -65,9 +65,10 @@
             {% for (let pizza of pizzas) { %}
             <div class="card m-3 shadow" style="max-width: 640px;">
                 <div class="row">
-                    <div class="col-md-6"> <img
-                            src="https://hips.hearstapps.com/hmg-prod/images/classic-cheese-pizza-recipe-2-64429a0cb408b.jpg"
-                            class="img-fluid rounded-start" style="width: 350px; height: 275px;"> </div>
+                    <div class="col-md-6"> 
+                        {% if (pizza?.image) { %}
+                        <img src="{%= pizza.image %}" class="img-fluid rounded-start" style="width: 350px; height: 275px;"> </div>
+                        {% } %}
                     <div class="col-md-6">
                         <div class="card-body">
                             <h4 class="card-title">Super Pizza 201</h4>
