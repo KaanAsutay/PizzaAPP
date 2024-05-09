@@ -3,9 +3,11 @@
     <!-- content start -->
     <div class="pb-5">
         <div class="mx-auto d-flex justify-content-center align-items-center pt-5">
-            <div class="card"> <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu32ZkwB6QN3SChlL-dVKiZd4SwpJEg3zAS2JP4S-X1PbK5Wo_nVVD-jjJe4rE8Gbo_Zc&amp;usqp=CAU"
-                    class="card-img-top" style="width:400px; height:300px;"> <!-- admin-area-start -->
+            <div class="card"> 
+                {% if (order.pizzaId?.image) { %}
+                <img src="{%= order.pizzaId.image %}" class="card-img-top" style="width:400px; height:300px;">
+                {% } %} 
+                    <!-- admin-area-start -->
                 <div class="col-md-3 d-flex align-items-center rounded p-2">
                     <a href="/orders/654d58ee9acdcd3619b6c8db/update"> <button
                             class="btn btn-sm btn-warning me-1">Update</button></a>
