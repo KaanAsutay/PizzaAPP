@@ -102,11 +102,9 @@
             <span class="btn btn-light disabled me-2">&larr;</span> 
             {% } %}
 
-            <a class="btn btn-primary" href="{%= pageUrl %}&page=1">1</a> 
-            <a class="btn btn-secondary" href="{%= pageUrl %}&page=2">2</a> 
-            <a class="btn btn-secondary" href="{%= pageUrl %}&page=3">3</a> 
-            <a class="btn btn-secondary" href="{%= pageUrl %}&page=4">4</a> 
-            <a class="btn btn-secondary" href="{%= pageUrl %}&page=5">5</a> 
+            {% for (let pageNo = 1; pageNo <= details.pages.total; pageNo++) { %}
+            <a class="btn btn-primary" href="{%= pageUrl %}&page={%= pageNo %}">{%= pageNo %}</a>           
+            {% } %}
 
             <a class="btn btn-primary ms-2" href="{%= pageUrl %}&page=2">&rarr;</a>
 
