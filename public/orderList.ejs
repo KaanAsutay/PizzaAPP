@@ -25,19 +25,19 @@
                         </div>
                     </div>
                     <!-- admin-area-start -->
+                    {% if (user) { %}
                     <div class="col-md-3 d-flex align-items-center rounded">
                         <a href="/orders/{%= order.id %}"> <button
                                 class="btn btn-sm btn-info me-1">Detail</button></a>
                         <a href="/orders/{%= order.id %}/update"> <button
                                 class="btn btn-sm btn-warning me-1">Update</button></a>
-                    </div> <!-- admin-area-end -->
+                    </div> 
+                    {% } %}
+                    <!-- admin-area-end -->
                 </div>
             </div>
             {% } %}
-        </div><!-- totalRecords -->
-        <p class="text-center">
-            <span class="p-2 bg-dark text-white">Total 10 Records</span>
-        </p>
+        </div>
     </div>
     <!-- content end -->
 
