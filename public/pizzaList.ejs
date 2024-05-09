@@ -107,8 +107,8 @@
             {% } %}
 
             {% if (details.pages.next) { %}
-            <a class="btn btn-primary me-2" href="{%= pageUrl %}&page={%= details.pages.next %}">&laquo;</a>
-            <a class="btn btn-primary" href="{%= pageUrl %}&page={%= details.pages.total %}">&larr;</a> 
+            <a class="btn btn-primary me-2" href="{%= pageUrl %}&page={%= details.pages.next %}">&rarr;</a>
+            <a class="btn btn-primary" href="{%= pageUrl %}&page={%= details.pages.total %}">&raquo;</a> 
             {% } else { %}
             <span class="btn btn-light disabled me-2">&rarr;</span>
             <span class="btn btn-light disabled me-2">&raquo;</span> 
